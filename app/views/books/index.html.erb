@@ -1,1 +1,38 @@
-<h1>indexページ</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4">
+			<div>
+				<h2>New Book</h2>
+				<%= form_with model: @book, url: books_path, locla: true do |form| %>
+					<p>Tile</p>
+					<%= form.text_field :title %>
+					<p>Opinion</p>
+					<%= form.text_area :body %>
+
+					<%= form.submit "Create Book" %>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-lg-8">
+			<h1>Books</h1>
+			<table>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Title</th>
+						<th>Opinion</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @books.each do |book| %>
+						<tr>
+							<td></td>
+							<td><%= book.title %></td>
+							<td><%= book.body %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
