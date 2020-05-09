@@ -18,3 +18,33 @@
 @import "bootstrap";
 // homes
 @import "homes";
+
+// header
+header {
+	height: 50px;
+	background-color: #000;
+}
+
+.header-title {
+	font-size: 25px;
+	color: #fff;
+	display: inline-block;
+}
+
+.header-list-icon {
+	color: #fff;
+	margin-right: 10px;
+}
+
+.header-lists {
+	float: right;
+	display: inline-block;
+	
+	& li {
+		font-size: 17px;
+	}
+	& a {
+		color: #fff;
+		line-height: 50px;
+	}
+}

@@ -10,6 +10,44 @@
   </head>
 
   <body>
+    <header id="header" class="header">
+      <div class="container">
+        <nav>
+          <p class="header-title">Bookers</p>
+          <% if user_signed_in? %>
+            <ul class="list-inline header-lists">
+              <li>
+                <a href="#" class="glyphicon glyphicon-home header-list-icon">Home</a>
+              </li>
+              <li>
+                <a href="#" class="glyphicon glyphicon-user header-list-icon">Users</a>
+              </li>
+              <li>
+                <a href="#" class="glyphicon glyphicon-book header-list-icon">Books</a>
+              </li>
+              <li>
+                <a href="#" class="glyphicon glyphicon-log-out header-list-icon">logout</a>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="list-inline">
+              <li>
+                <a href="#" class="glyphicon glyphicon-home">Home</a>
+              </li>
+              <li>
+                <a href="#" class="glyphicon glyphicon-link">about</a>
+              </li>
+              <li>
+                <a href="#" class="glyphicon glyphicon-edit">sign up</a>
+              </li>
+              <li>
+                <a href="#" class="glyphicon glyphicon-log-in">login</a>
+              </li>
+            </ul>
+          <% end %>
+        </nav>
+      </div>
+    </header><!-- /header -->
     <%= yield %>
   </body>
 </html>
