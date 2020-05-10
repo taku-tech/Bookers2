@@ -18,7 +18,6 @@
             <ul class="list-inline header-lists">
               <li>
                 <%= link_to 'Home', user_path(current_user.id), class: "glyphicon glyphicon-home header-list-icon" %>
-                <!-- <a href="#" class="glyphicon glyphicon-home header-list-icon">Home</a> -->
               </li>
               <li>
                 <a href="#" class="glyphicon glyphicon-user header-list-icon">Users</a>
@@ -27,7 +26,7 @@
                 <a href="#" class="glyphicon glyphicon-book header-list-icon">Books</a>
               </li>
               <li>
-                <a href="#" class="glyphicon glyphicon-log-out header-list-icon">logout</a>
+                <%= link_to "logout", destroy_user_session_path, class: "glyphicon glyphicon-log-out header-list-icon", method: :delete %>
               </li>
             </ul>
           <% else %>
