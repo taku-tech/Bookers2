@@ -1,32 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-4">
-			<div class="user-info-wrapper">
-				<h2>User info</h2>
-				<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg",  size: "100x100"%>
-				<table>
-						<tr>
-							<th>name</th>
-							<td><%= current_user.name %></td>
-						</tr>
-						<tr>
-							<th>introduction</th>
-							<td><%= current_user.introduction %></td>
-						</tr>
-				</table>
-				<%= link_to content_tag(:i, '', class: 'glyphicon glyphicon-wrench'), edit_user_path(current_user.id) %>
-			</div>
-			<div class="new-post-wrapper">
-				<h2>New Book</h2>
-				<%= form_with model: @book, url: books_path, locla: true do |form| %>
-					<p>Tile</p>
-					<%= form.text_field :title %>
-					<p>Opinion</p>
-					<%= form.text_area :body %>
-
-					<%= form.submit "Create Book" %>
-				<% end %>
-			</div>
+			<%= render 'users/sidebar', user: @user, new_post: @new_post %>
 		</div>
 		<div class="col-lg-8">
 			<h1>Users</h1>

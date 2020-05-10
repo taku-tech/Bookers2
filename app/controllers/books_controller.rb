@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
 	def index
 		@books = Book.all
-		@book = Book.new
-		@user = User.find(current_user.id)
+		@new_post = Book.new
+		@user = current_user
 	end
 
 	def create
