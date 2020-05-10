@@ -3,7 +3,7 @@
 		<div class="col-lg-4">
 			<div class="user-info-wrapper">
 				<h2>User info</h2>
-				<%= image_tag('no_image.jpg', class: "user-img", style: "width: 100px; height: 100px;") %>
+				<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg",  size: "100x100"%>
 				<table>
 						<tr>
 							<th>name</th>
