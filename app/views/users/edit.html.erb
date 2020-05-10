@@ -1,2 +1,20 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h2>User info</h2>
+<%= form_with model: @user do |form| %>
+	<div>
+		<%= form.label :name %>
+		<%= form.text_field :name %>
+	</div>
+	<div>
+		<p>image</p>
+		<%= attachment_image_tag @user, :profile_image, fallback: "no_image.jpg",  size: "100x100"%>
+		<label class="control-label sr-only" for="inputEmail">ProfileImage</label>
+	    <%= form.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+	</div>
+	<div>
+		<%= form.label :introduction %>
+		<%= form.text_area :introduction %>
+	</div>
+	<div>
+		<%= form.submit 'Update User' %>
+	</div>
+<% end %>
