@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 	# nameのデータ操作を可能にする設定
 	before_action :configure_permitted_parameters, if: :devise_controller?
-
+	before_action :authenticate_user!
 	def after_sign_in_path_for(resorce)
 		books_path
 	end
