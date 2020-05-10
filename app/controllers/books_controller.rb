@@ -13,7 +13,8 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		
+		@book = Book.find(params[:id])
+		@new_post = Book.new
 	end
 
 	private
