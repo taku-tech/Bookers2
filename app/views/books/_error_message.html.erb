@@ -1,0 +1,13 @@
+<!-- エラーメッセージ -->
+<div class="row">
+	<% if new_post.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= new_post.errors.count %> errors prohibited this obj from being saved:</h2>
+			<ul>
+				<% new_post.errors.full_messages.each do |message| %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+</div>

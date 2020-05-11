@@ -18,7 +18,7 @@
 <!-- 新規投稿フォーム -->
 <div class="new-post-wrapper">
 	<h2>New Book</h2>
-	<%= form_with model: new_post, url: books_path, locla: true do |form| %>
+	<%= form_with model: new_post, url: books_path, local: true do |form| %>
 		<p>Tile</p>
 		<%= form.text_field :title %>
 		<p>Opinion</p>
