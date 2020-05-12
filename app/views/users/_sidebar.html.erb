@@ -2,7 +2,7 @@
 <div class="user-info-wrapper">
 	<h2>User info</h2>
 	<%= attachment_image_tag user, :profile_image, fallback: "no_image.jpg",  size: "100x100"%>
-	<table>
+	<table class="table">
 			<tr>
 				<th>name</th>
 				<td><%= user.name %></td>
@@ -12,17 +12,21 @@
 				<td><%= user.introduction %></td>
 			</tr>
 	</table>
-	<%= link_to content_tag(:i, '', class: 'glyphicon glyphicon-wrench'), edit_user_path(current_user.id) %>
+	<%= link_to content_tag(:i, '', class: 'glyphicon glyphicon-wrench'), edit_user_path(current_user.id), class: "btn btn-default btn-block" %>
 </div>
 <!-- 新規投稿フォーム -->
 <div class="new-post-wrapper">
 	<h2>New book</h2>
 	<%= form_with model: new_post, url: books_path, local: true do |form| %>
-		<p>Title</p>
-		<%= form.text_field :title %>
-		<p>Opinion</p>
-		<%= form.text_area :body %>
+		<div class="form-group">
+			<p>Title</p>
+			<%= form.text_field :title, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<p>Opinion</p>
+			<%= form.text_area :body, class: "form-control" %>
+		</div>
 
-		<%= form.submit "Create Book" %>
+		<%= form.submit "Create Book", class: "btn btn-default btn-block btn-post" %>
 	<% end %>
 </div>

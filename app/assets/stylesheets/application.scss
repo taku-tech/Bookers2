@@ -50,6 +50,20 @@ header {
 }
 
 
+.btn-post {
+	color: #fff;
+	background-color: #000077;
+	border: 1px solid #000077;
+	opacity: 0.6;
+
+	&:hover {
+		background-color: #000077;
+		border: 1px solid #000077;
+		color: #fff;
+		opacity: 1.0;
+	}
+}
+
 // エラーメッセージ
 #error_explanation {
 	color: red;
