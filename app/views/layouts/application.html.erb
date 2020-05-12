@@ -49,9 +49,7 @@
       </div>
     </header><!-- /header -->
     <div class="container"> 
-      <% flash.each do |key, value| %> 
-      <%= content_tag(:div, value, class: "#{key}") %> 
-      <% end %>
+      <%= render 'layouts/notifications' %>
      </div>
     <%= yield %>
   </body>
